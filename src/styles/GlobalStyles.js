@@ -10,6 +10,9 @@ const GlobalStyles = createGlobalStyle`
     background-color: whitesmoke;
     
     }
+    h1{
+        margin: 0;
+    }
     
     h2{
         margin-bottom: 0;
