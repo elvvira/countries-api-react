@@ -10,8 +10,8 @@ const Filter = () => {
 	if (!data) return <h1>cargando...</h1>;
 	return (
 		<ContainerFilter>
-			<StyledSelect onClick={e => setUrlToFetch(e.target.value)} name='' id=''>
-				<option value=''>Filter by Region</option>
+			<StyledSelect onChange={e => setUrlToFetch(e.target.value)}>
+				<option value={URLS.ALL}>Filter by Region</option>
 				<option value={URLS.AFRICA}>Africa</option>
 				<option value={URLS.AMERICA}>America</option>
 				<option value={URLS.ASIA}>Asia</option>
