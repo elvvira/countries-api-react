@@ -4,6 +4,7 @@ const ContainerFilter = styled.div`
 	width: 345px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 2rem;
 `;
 const StyledSelect = styled.select`
 	width: 200px;
@@ -15,4 +16,5 @@ const StyledSelect = styled.select`
 	font-size: 12px;
 	padding-left: 1rem;
 `;
+
 export { ContainerFilter, StyledSelect };
