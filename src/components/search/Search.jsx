@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ContainerSearch, StyledInput } from './styled';
 
 const Search = () => {
-	// const [urlToFetch, setUrlToFetch] = useState('s');
+	// const [urlToFetch, setUrlToFetch] = useState('');
 	// const [data, setData] = useState([]);
 	// const [search, setSearch] = useState('');
 	// const [change, setChange] = useState(false);
