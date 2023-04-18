@@ -8,7 +8,7 @@ const Router = () => {
 		<Routes>
 			<Route path={'/'} element={<Layout />}>
 				<Route index element={<Home />} />
-				<Route path='/modal' element={<Modal />} />
+				<Route path='/modal/:name' element={<Modal />} />
 			</Route>
 		</Routes>
 	);

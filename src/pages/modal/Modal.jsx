@@ -1,40 +1,43 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import { ModalImage, Properties, StyledBorder, StyledModal } from './styled';
 
-const Modal = ({ pais }) => {
+const Modal = () => {
 	const { data } = useFetch();
+	const params = useParams();
+	const countrySelect = data.find(country => {
+		return country.name.common === params.name;
+	});
+	const navigate = useNavigate();
+	console.log(countrySelect);
+	if (data.length === 0) return <h1>Loading...</h1>;
 
 	return (
 		<StyledModal>
-			<Link to='/'>
-				<button>
-					<img src='' alt='' />
-					Back
-				</button>
-			</Link>
-			<ModalImage src='' alt='' />
-			<h1>{pais}</h1>
+			<button onClick={() => navigate(`/`)}>Back</button>
+
+			<ModalImage src={countrySelect.flags.png} alt='' />
+			<h1>{params.name}</h1>
 			<Properties>
 				<p>
-					Native Name: <span></span>
+					Native Name: <span>{countrySelect.name.common}</span>
 				</p>
 				<p>
-					Population: <span></span>
+					Population: <span>{countrySelect.population}</span>
 				</p>
 				<p>
-					Region: <span></span>
+					Region: <span>{countrySelect.region}</span>
 				</p>
 				<p>
-					Sub Region: <span></span>
+					Sub Region: <span>{countrySelect.subregion}</span>
 				</p>
 				<p>
-					Capital: <span></span>
+					Capital: <span>{countrySelect.capital}</span>
 				</p>
 			</Properties>
 			<Properties>
 				<p>
-					Top Level Domain: <span></span>
+					Top Level Domain: <span>{countrySelect.tld}</span>
 				</p>
 				<p>
 					Currencies: <span></span>
